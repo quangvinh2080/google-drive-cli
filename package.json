@@ -1,11 +1,11 @@
 {
-  "name": "google-sheet-cli",
-  "description": "A simple helper cli to interact with google sheets.",
+  "name": "google-drive-cli",
+  "description": "A simple helper cli to interact with google drive.",
   "version": "0.0.0",
   "bin": {
-    "google-sheet": "./bin/run"
+    "google-drive": "./bin/run"
   },
-  "bugs": "https://github.com/jroehl/google-sheet-cli/issues",
+  "bugs": "https://github.com/quangvinh2080/google-drive-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.6.1",
     "@oclif/config": "^1.15.1",
@@ -40,42 +40,41 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/jroehl/google-sheet-cli",
+  "homepage": "https://github.com/quangvinh2080/google-drive-cli",
   "keywords": [
     "oclif",
     "cli",
-    "google sheets"
+    "google drive"
   ],
   "author": "jroehl <mail@johannroehl.de>",
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "google-sheet",
+    "bin": "google-drive",
     "plugins": [
       "@oclif/plugin-help"
     ],
     "topics": {
-      "data": {
-        "description": "Manage data in worksheet"
+      "about": {
+        "description": "About your drive"
       },
-      "worksheet": {
-        "description": "Manage worksheets"
+      "files": {
+        "description": "Manage files"
       },
-      "spreadsheet": {
-        "description": "Manage spreadsheets"
+      "drives": {
+        "description": "Manage drives"
       }
     }
   },
-  "repository": "jroehl/google-sheet-cli",
+  "repository": "quangvinh2080/google-drive-cli",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "version": "oclif-dev readme --multi && sh ./bin/clean.sh && git add README.md docs/*.md",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme --multi",
     "test": "nyc mocha \"test/**/*.test.ts\"",
     "semantic-release": "semantic-release",
-    "prepare": "husky install",
-    "cleanup": "bin/clear-testsheet.sh"
+    "prepare": "husky install"
   },
   "types": "lib/index.d.ts"
 }
