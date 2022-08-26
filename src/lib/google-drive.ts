@@ -1,4 +1,7 @@
 import { google, drive_v3 } from 'googleapis';
+import path from 'path';
+import mime from 'mime-types';
+import fs from 'fs';
 
 export namespace GoogleDriveCli {
   export interface Credentials {
@@ -14,6 +17,12 @@ export namespace GoogleDriveCli {
 
   export interface FormattedData {
     [name: string]: string;
+  }
+
+  export interface FileOptions {
+    path: string;
+    name?: string;
+    mimeType?: string;
   }
 }
 
@@ -90,5 +99,29 @@ export default class GoogleDrive {
   async emptyTrash() {
     await this.drive.files.emptyTrash();
     return;
+  }
+
+  async createFile(file: GoogleDriveCli.FileOptions, options: GoogleDriveCli.QueryOptions = {}): Promise<drive_v3.Schema$File> {
+    const fileName = file.name || path.basename(file.path);
+    let mimeType: string = ''
+    const mimeLookup = mime.lookup(fileName);
+
+    if (mimeLookup) {
+      mimeType = mimeLookup;
+    }
+
+    const { data: drive } = await this.drive.files.create({
+      requestBody: {
+        name: fileName,
+        mimeType: file.mimeType || mimeType,
+      },
+      media: {
+        mimeType: file.mimeType,
+        body: fs.createReadStream(file.path)
+      }
+    });
+    if (!drive) throw `Can not create file`;
+
+    return drive;
   }
 }
