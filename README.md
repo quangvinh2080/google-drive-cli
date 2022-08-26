@@ -28,7 +28,7 @@ $ npm install -g @quangvinh2080/google-drive-cli
 $ google-drive COMMAND
 running command...
 $ google-drive (-v|--version|version)
-@quangvinh2080/google-drive-cli/0.0.2 linux-x64 node-v14.15.5
+@quangvinh2080/google-drive-cli/0.0.3 linux-x64 node-v14.15.5
 $ google-drive --help [COMMAND]
 USAGE
   $ google-drive COMMAND

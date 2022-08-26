@@ -25,4 +25,4 @@ EXAMPLE
   $ gdrive about:get'
 ```
 
-_See code: [src/commands/about/get.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.2/src/commands/about/get.ts)_
+_See code: [src/commands/about/get.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.3/src/commands/about/get.ts)_
