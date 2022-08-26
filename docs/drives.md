@@ -32,4 +32,4 @@ EXAMPLE
   $ gdrive drives:list
 ```
 
-_See code: [src/commands/drives/list.ts](https://github.com/quangvinh2080/google-drive-cli/blob/master/src/commands/drives/list.ts)_
+_See code: [src/commands/drives/list.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/drives/list.ts)_
