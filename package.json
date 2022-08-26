@@ -9,7 +9,7 @@
   "dependencies": {
     "@oclif/command": "^1.6.1",
     "@oclif/config": "^1.15.1",
-    "@oclif/plugin-help": "^3.0.0",
+    "@oclif/plugin-help": "^5.1.12",
     "cli-ux": "^5.4.5",
     "googleapis": "^84.0.0",
     "husky": "^7.0.0",
