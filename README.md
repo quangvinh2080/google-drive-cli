@@ -28,7 +28,7 @@ $ npm install -g google-drive-cli
 $ google-drive COMMAND
 running command...
 $ google-drive (-v|--version|version)
-google-drive-cli/0.0.0 linux-x64 node-v12.22.7
+google-drive-cli/0.0.0 linux-x64 node-v8.17.0
 $ google-drive --help [COMMAND]
 USAGE
   $ google-drive COMMAND
@@ -44,9 +44,6 @@ _See code: [src/lib/google-drive.ts](https://github.com/quangvinh2080/google-dri
 <!-- commands -->
 # Command Topics
 
-* [`google-drive about`](docs/about.md) - About your drive
-* [`google-drive drives`](docs/drives.md) - Manage drives
-* [`google-drive files`](docs/files.md) - Manage files
 * [`google-drive help`](docs/help.md) - display help for google-drive
 
 <!-- commandsstop -->

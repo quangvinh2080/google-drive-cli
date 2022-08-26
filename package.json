@@ -46,7 +46,7 @@
     "cli",
     "google drive"
   ],
-  "author": "jroehl <mail@johannroehl.de>",
+  "author": "quangvinh2080 <quangvinh2080@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
