@@ -45,7 +45,7 @@ EXAMPLE
   $ gdrive files:create --path ./example --rawOutput
 ```
 
-_See code: [src/commands/files/create.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/files/create.ts)_
+_See code: [src/commands/files/create.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.2/src/commands/files/create.ts)_
 
 ## `google-drive files:delete`
 
@@ -64,7 +64,7 @@ EXAMPLE
   $ gdrive files:delete --fileId=<fileId>
 ```
 
-_See code: [src/commands/files/delete.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/files/delete.ts)_
+_See code: [src/commands/files/delete.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.2/src/commands/files/delete.ts)_
 
 ## `google-drive files:emptyTrash`
 
@@ -82,7 +82,7 @@ EXAMPLE
   $ gdrive files:emptyTrash
 ```
 
-_See code: [src/commands/files/emptyTrash.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/files/emptyTrash.ts)_
+_See code: [src/commands/files/emptyTrash.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.2/src/commands/files/emptyTrash.ts)_
 
 ## `google-drive files:list`
 
@@ -130,4 +130,4 @@ EXAMPLE
   $ gdrive files:list --driveId=<driveId>
 ```
 
-_See code: [src/commands/files/list.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/files/list.ts)_
+_See code: [src/commands/files/list.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.2/src/commands/files/list.ts)_
