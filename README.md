@@ -3,8 +3,8 @@
 A simple helper cli to interact with google drive.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/google-drive-cli.svg)](https://npmjs.org/package/google-drive-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/google-drive-cli.svg)](https://npmjs.org/package/google-drive-cli)
+[![Version](https://img.shields.io/npm/v/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
 [![License](https://img.shields.io/npm/l/google-drive-cli.svg)](https://github.com/quangvinh2080/google-drive-cli/blob/master/package.json)
 
 [![CodeQL](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml)
@@ -24,11 +24,11 @@ A simple helper cli to interact with google drive.
 ## Usage as CLI
 <!-- usage -->
 ```sh-session
-$ npm install -g google-drive-cli
+$ npm install -g @quangvinh2080/google-drive-api
 $ google-drive COMMAND
 running command...
 $ google-drive (-v|--version|version)
-google-drive-cli/0.0.0 linux-x64 node-v8.17.0
+@quangvinh2080/google-drive-api/0.0.0 linux-x64 node-v8.17.0
 $ google-drive --help [COMMAND]
 USAGE
   $ google-drive COMMAND
