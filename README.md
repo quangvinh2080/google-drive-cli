@@ -3,9 +3,9 @@
 A simple helper cli to interact with google drive.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
-[![License](https://img.shields.io/npm/l/google-drive-cli.svg)](https://github.com/quangvinh2080/google-drive-cli/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@quangvinh2080/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@quangvinh2080/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
+[![License](https://img.shields.io/npm/l/@quangvinh2080/google-drive-cli.svg)](https://github.com/quangvinh2080/google-drive-cli/blob/master/package.json)
 
 [![CodeQL](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml)
 [![Test version](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/test.yml/badge.svg)](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/test.yml)
@@ -35,6 +35,13 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
+If you don't want to input email and private key on every command, export it as environment variables:
+
+```
+export GDRIVE_CLIENT_EMAIL=example@email.com
+export GDRIVE_PRIVATE_KEY="service account's private key"
+```
 
 ## Usage as library
 
