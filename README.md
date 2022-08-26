@@ -24,11 +24,11 @@ A simple helper cli to interact with google drive.
 ## Usage as CLI
 <!-- usage -->
 ```sh-session
-$ npm install -g @quangvinh2080/google-drive-api
+$ npm install -g @quangvinh2080/google-drive-cli
 $ google-drive COMMAND
 running command...
 $ google-drive (-v|--version|version)
-@quangvinh2080/google-drive-api/0.0.0 linux-x64 node-v8.17.0
+@quangvinh2080/google-drive-cli/0.0.0 linux-x64 node-v14.15.5
 $ google-drive --help [COMMAND]
 USAGE
   $ google-drive COMMAND
@@ -44,6 +44,9 @@ _See code: [src/lib/google-drive.ts](https://github.com/quangvinh2080/google-dri
 <!-- commands -->
 # Command Topics
 
+* [`google-drive about`](docs/about.md) - About your drive
+* [`google-drive drives`](docs/drives.md) - Manage drives
+* [`google-drive files`](docs/files.md) - Manage files
 * [`google-drive help`](docs/help.md) - display help for google-drive
 
 <!-- commandsstop -->
