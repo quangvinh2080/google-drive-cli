@@ -3,9 +3,49 @@
 
 Manage files
 
+* [`google-drive files:create`](#google-drive-filescreate)
 * [`google-drive files:delete`](#google-drive-filesdelete)
 * [`google-drive files:emptyTrash`](#google-drive-filesemptytrash)
 * [`google-drive files:list`](#google-drive-fileslist)
+
+## `google-drive files:create`
+
+Creates a new file
+
+```
+USAGE
+  $ google-drive files:create
+
+OPTIONS
+  -h, --help
+      show CLI help
+
+  -r, --rawOutput
+      Get the raw output as a JSON string
+
+  --mimeType=mimeType
+      File's mime type
+
+  --name=name
+      File's name
+
+  --path=path
+      (required) The file's path
+
+  --uploadType=uploadType
+      [default: *] The type of upload request to the /upload URI. If you are uploading data (using an /upload URI), this 
+      field is required. If you are creating a metadata-only file, this field is not required. Additionally, this field is 
+      not shown in the "Try this API" widget because the widget doesn't support data uploads. Acceptable values are:
+        "media" - Simple upload. Upload the media only, without any metadata. 
+        "multipart" - Multipart upload. Upload both the media and its metadata, in a single request.
+        "resumable" - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests 
+      where the first request includes the metadata.
+
+EXAMPLE
+  $ gdrive files:create --path ./example --rawOutput
+```
+
+_See code: [src/commands/files/create.ts](https://github.com/quangvinh2080/google-drive-cli/blob/v0.0.1/src/commands/files/create.ts)_
 
 ## `google-drive files:delete`
 
