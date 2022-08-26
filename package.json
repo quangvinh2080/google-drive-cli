@@ -1,5 +1,5 @@
 {
-  "name": "google-drive-cli",
+  "name": "gdrive-cli",
   "description": "A simple helper cli to interact with google drive.",
   "version": "0.0.0",
   "bin": {
