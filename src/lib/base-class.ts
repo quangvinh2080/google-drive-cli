@@ -1,40 +1,23 @@
 import Command, { flags } from '@oclif/command';
 import cli from 'cli-ux';
-import GoogleSheet, { GoogleSheetCli } from './google-sheet';
+import GoogleDrive from './google-drive';
 
-export const spreadsheetId = flags.string({
+export const driveId = flags.string({
   char: 's',
-  description: 'ID of the spreadsheet to use',
-  required: true,
-  env: 'SPREADSHEET_ID',
-});
-
-export const worksheetTitle = flags.string({
-  char: 't',
-  description: 'Title of the worksheet to use',
-  required: true,
-  env: 'WORKSHEET_TITLE',
-});
-export const valueInputOption = flags.string({
-  char: 'v',
-  description: 'The style of the input ("RAW" or "USER_ENTERED")',
+  description: 'ID of the shared drive to search',
   required: false,
-  options: [GoogleSheetCli.ValueInputOption.RAW, GoogleSheetCli.ValueInputOption.USER_ENTERED],
-  default: GoogleSheetCli.ValueInputOption.RAW,
-  env: 'VALUE_INPUT_OPTION',
+  env: 'DRIVE_ID',
 });
 
-export const data = {
-  name: 'data',
-  type: 'string',
-  description: 'The data to be used as a JSON string - nested array [["1", "2", "3"]]',
+export const fileId = flags.string({
+  char: 's',
+  description: 'The ID of the file',
   required: true,
-  env: 'DATA',
-};
+});
 
 export default abstract class extends Command {
   private rawLogs: boolean = false;
-  public gsheet!: GoogleSheet;
+  public gdrive!: GoogleDrive;
 
   static flags = {
     help: flags.help({ char: 'h' }),
@@ -72,17 +55,17 @@ export default abstract class extends Command {
     this.rawLogs = flags && (flags as any).rawOutput;
 
     const {
-      GSHEET_CLIENT_EMAIL = await cli.prompt('What is your client email?', { type: 'hide' }),
-      GSHEET_PRIVATE_KEY = await cli.prompt('What is your private key?', { type: 'hide' }),
+      GDRIVE_CLIENT_EMAIL = await cli.prompt('What is your client email?', { type: 'hide' }),
+      GDRIVE_PRIVATE_KEY = await cli.prompt('What is your private key?', { type: 'hide' }),
     } = process.env;
 
-    const gsheet = new GoogleSheet();
-    await gsheet.authorize({
-      client_email: GSHEET_CLIENT_EMAIL,
-      private_key: GSHEET_PRIVATE_KEY,
+    const gdrive = new GoogleDrive();
+    await gdrive.authorize({
+      client_email: GDRIVE_CLIENT_EMAIL,
+      private_key: GDRIVE_PRIVATE_KEY,
     });
 
-    this.gsheet = gsheet;
+    this.gdrive = gdrive;
   }
 
   async catch(err: Error) {

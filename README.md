@@ -1,16 +1,16 @@
-# google-sheet-cli
+# google-drive-cli
 
-A simple helper cli to interact with google sheets.
+A simple helper cli to interact with google drive.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/google-sheet-cli.svg)](https://npmjs.org/package/google-sheet-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/google-sheet-cli.svg)](https://npmjs.org/package/google-sheet-cli)
-[![License](https://img.shields.io/npm/l/google-sheet-cli.svg)](https://github.com/jroehl/google-sheet-cli/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@quangvinh2080/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@quangvinh2080/google-drive-cli.svg)](https://npmjs.org/package/@quangvinh2080/google-drive-cli)
+[![License](https://img.shields.io/npm/l/@quangvinh2080/google-drive-cli.svg)](https://github.com/quangvinh2080/google-drive-cli/blob/master/package.json)
 
-[![CodeQL](https://github.com/jroehl/google-sheet-cli/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jroehl/google-sheet-cli/actions/workflows/codeql-analysis.yml)
-[![Test version](https://github.com/jroehl/google-sheet-cli/actions/workflows/test.yml/badge.svg)](https://github.com/jroehl/google-sheet-cli/actions/workflows/test.yml)
+[![CodeQL](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/codeql-analysis.yml)
+[![Test version](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/test.yml/badge.svg)](https://github.com/quangvinh2080/google-drive-cli/actions/workflows/test.yml)
 
-- [google-sheet-cli](#google-sheet-cli)
+- [google-drive-cli](#google-drive-cli)
   - [Usage as CLI](#usage-as-cli)
   - [Usage as library](#usage-as-library)
 - [Command Topics](#command-topics)
@@ -24,30 +24,34 @@ A simple helper cli to interact with google sheets.
 ## Usage as CLI
 <!-- usage -->
 ```sh-session
-$ npm install -g google-sheet-cli
-$ google-sheet COMMAND
+$ npm install -g @quangvinh2080/google-drive-cli
+$ google-drive COMMAND
 running command...
-$ google-sheet (-v|--version|version)
-google-sheet-cli/0.0.0 darwin-x64 node-v14.15.5
-$ google-sheet --help [COMMAND]
+$ google-drive (-v|--version|version)
+@quangvinh2080/google-drive-cli/0.0.3 linux-x64 node-v8.17.0
+$ google-drive --help [COMMAND]
 USAGE
-  $ google-sheet COMMAND
+  $ google-drive COMMAND
 ...
 ```
 <!-- usagestop -->
 
+If you don't want to input email and private key on every command, export it as environment variables:
+
+```
+export GDRIVE_CLIENT_EMAIL=example@email.com
+export GDRIVE_PRIVATE_KEY="service account's private key"
+```
+
 ## Usage as library
 
-You can import the GoogleSheet class as a module and use it without the cli functionality.
-_See code: [src/lib/google-sheet.ts](https://github.com/jroehl/google-sheet-cli/blob/master/src/lib/google-sheet.ts)_
+You can import the GoogleDrive class as a module and use it without the cli functionality.
+_See code: [src/lib/google-drive.ts](https://github.com/quangvinh2080/google-drive-cli/blob/master/src/lib/google-drive.ts)_
 
 <!-- commands -->
 # Command Topics
 
-* [`google-sheet data`](docs/data.md) - Manage data in worksheet
-* [`google-sheet help`](docs/help.md) - display help for google-sheet
-* [`google-sheet spreadsheet`](docs/spreadsheet.md) - Manage spreadsheets
-* [`google-sheet worksheet`](docs/worksheet.md) - Manage worksheets
+* [`google-drive help`](docs/help.md) - display help for google-drive
 
 <!-- commandsstop -->
 
@@ -55,7 +59,7 @@ _See code: [src/lib/google-sheet.ts](https://github.com/jroehl/google-sheet-cli/
 
 ## Build with
 
-- [googleapis](https://github.com/googleapis/googleapis) - The node module used for manipulating the google sheet
+- [googleapis](https://github.com/googleapis/googleapis) - The node module used for manipulating the google drive
 - [oclif](https://oclif.io) - The node module used to create the cli
 - [semantic-release](https://github.com/semantic-release/semantic-release) - for releasing new versions
 - [typescript](https://www.typescriptlang.org)
