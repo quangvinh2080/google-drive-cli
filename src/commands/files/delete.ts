@@ -26,6 +26,6 @@ export default class Delete extends Command {
 
     await this.gdrive.deleteFile(fileId);
     this.stop();
-    this.logRaw('Deleted file', 'Done');
+    this.logRaw(`File ${fileId} is deleted`);
   }
 }
