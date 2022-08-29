@@ -10,7 +10,7 @@
     "@oclif/command": "^1.6.1",
     "@oclif/config": "^1.15.1",
     "@oclif/plugin-help": "^5.1.12",
-    "cli-ux": "^5.4.5",
+    "cli-ux": "^6.0.9",
     "googleapis": "^84.0.0",
     "husky": "^7.0.0",
     "lodash.get": "^4.4.2",
