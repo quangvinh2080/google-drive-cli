@@ -1,17 +1,10 @@
-import {expect, test} from '@oclif/test'
+import { expect } from '@oclif/test';
+import { testRun } from '../helper';
 
-describe('files:list', () => {
-  test
-  .stdout()
-  .command(['files:list'])
-  .it('runs hello', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
-  })
+const baseCommand = 'files:list';
 
-  test
-  .stdout()
-  .command(['files:list', '--name', 'jeff'])
-  .it('runs hello --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
-  })
-})
+describe(baseCommand, () => {
+  testRun([baseCommand], (stdout: string) => {
+    // list files, line by line, TBD
+  });
+});

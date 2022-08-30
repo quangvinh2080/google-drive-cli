@@ -20,7 +20,7 @@ export default class Get extends Command {
 
   async run() {
     const {
-      flags: { pageSize, pageToken, q, useDomainAdminAccess }
+      flags: { pageSize, pageToken, q, useDomainAdminAccess, rawOutput }
     } = this.parse(Get);
 
     this.start('List drives');
@@ -31,6 +31,12 @@ export default class Get extends Command {
 
     const res = await this.gdrive.listDrives(options);
     this.stop();
-    this.logRaw('Listed drives', { operation: this.id, ...res });
+    if (rawOutput) {
+      this.logRaw('Listed drives', { operation: this.id, ...res });
+    } else {
+      res?.drives?.forEach(drive => {
+        this.logRaw(`${drive.id}\t${drive.name}`);
+      });
+    }
   }
 }

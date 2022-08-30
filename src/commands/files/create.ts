@@ -21,7 +21,7 @@ export default class Get extends Command {
 
   async run() {
     const {
-      flags: { uploadType, path, mimeType, name }
+      flags: { uploadType, path, mimeType, name, rawOutput }
     } = this.parse(Get);
 
     this.start('Create file');
@@ -36,6 +36,10 @@ export default class Get extends Command {
 
     const res = await this.gdrive.createFile(file, options);
     this.stop();
-    this.logRaw('Created file: ', { operation: this.id, ...res });
+    if (!rawOutput) {
+      this.logRaw('File is created. Add option --rawOutput to view full response');
+    } else {
+      this.logRaw('File is created', { operation: this.id, ...res });
+    }
   }
 }

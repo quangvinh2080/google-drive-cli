@@ -1,17 +1,15 @@
-import {expect, test} from '@oclif/test'
+import { expect } from '@oclif/test';
+import { testRun } from '../helper';
 
-describe('drives:list', () => {
-  test
-  .stdout()
-  .command(['drives:list'])
-  .it('runs hello', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
-  })
+const baseCommand = 'drives:list';
 
-  test
-  .stdout()
-  .command(['drives:list', '--name', 'jeff'])
-  .it('runs hello --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
-  })
-})
+describe(baseCommand, () => {
+  testRun([baseCommand], (stdout: string) => {
+    // it will print all drives, line-by-line
+  });
+  testRun([baseCommand, '--rawOutput'], (parsed: {}) => {
+    expect(parsed).to.have.property('drives');
+    expect((parsed as any).kind).to.be.eq('drive#driveList');
+    expect((parsed as any).operation).to.be.eq('drives:list');
+  });
+});

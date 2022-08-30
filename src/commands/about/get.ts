@@ -26,6 +26,6 @@ export default class Get extends Command {
 
     const res = await this.gdrive.getAbout({ fields });
     this.stop();
-    this.logRaw('Fetched about me', { operation: this.id, ...res });
+    this.logRaw('Add option --rawOutput to view full response', { operation: this.id, ...res });
   }
 }

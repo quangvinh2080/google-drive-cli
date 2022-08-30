@@ -21,6 +21,6 @@ export default class EmptyTrash extends Command {
 
     await this.gdrive.emptyTrash();
     this.stop();
-    this.logRaw('Finish empty trash', 'Done');
+    this.logRaw('Done');
   }
 }

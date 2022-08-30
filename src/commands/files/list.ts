@@ -43,7 +43,7 @@ export default class Get extends Command {
       this.logRaw('Listed files: ', { operation: this.id, ...res });
     } else {
       res?.files?.forEach(file => {
-        this.logRaw(`${file.id}\t${file.name}\t${file.size ? file.size : 'N/A' }`);
+        this.logRaw(`${file.id}\t${file.name}\t${file.mimeType}\t${file.size ? file.size : '0' }`);
       });
     }
   }

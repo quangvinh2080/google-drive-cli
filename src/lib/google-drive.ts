@@ -15,6 +15,10 @@ export namespace GoogleDriveCli {
     fields?: string;
   }
 
+  export interface CreateFileOptions {
+    parents?: any;
+  }
+
   export interface FormattedData {
     [name: string]: string;
   }
@@ -23,6 +27,10 @@ export namespace GoogleDriveCli {
     path: string;
     name?: string;
     mimeType?: string;
+  }
+
+  export interface FolderOptions {
+    name: string;
   }
 }
 
@@ -101,7 +109,7 @@ export default class GoogleDrive {
     return;
   }
 
-  async createFile(file: GoogleDriveCli.FileOptions, options: GoogleDriveCli.QueryOptions = {}): Promise<drive_v3.Schema$File> {
+  async createFile(file: GoogleDriveCli.FileOptions, options: GoogleDriveCli.CreateFileOptions = {}): Promise<drive_v3.Schema$File> {
     const fileName = file.name || path.basename(file.path);
     let mimeType: string = ''
     const mimeLookup = mime.lookup(fileName);
@@ -110,17 +118,39 @@ export default class GoogleDrive {
       mimeType = mimeLookup;
     }
 
+    try {
+      const fileObj: any = fs.createReadStream(file.path);
+      const { data: drive } = await this.drive.files.create({
+        requestBody: {
+          name: fileName,
+          mimeType: file.mimeType || mimeType,
+          ...options,
+        },
+        media: {
+          mimeType: file.mimeType,
+          body: fileObj
+        }
+      });
+
+      if (!drive) throw `Can not create file`;
+      return drive;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async createFolder(folder: GoogleDriveCli.FolderOptions, options: GoogleDriveCli.CreateFileOptions = {}): Promise<drive_v3.Schema$File> {
+    let mimeType: string = 'application/vnd.google-apps.folder'
+
     const { data: drive } = await this.drive.files.create({
       requestBody: {
-        name: fileName,
-        mimeType: file.mimeType || mimeType,
+        name: folder.name,
+        mimeType: mimeType,
+        ...options,
       },
-      media: {
-        mimeType: file.mimeType,
-        body: fs.createReadStream(file.path)
-      }
     });
-    if (!drive) throw `Can not create file`;
+
+    if (!drive) throw `Can not create folder`;
 
     return drive;
   }
