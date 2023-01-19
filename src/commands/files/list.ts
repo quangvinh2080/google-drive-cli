@@ -28,14 +28,14 @@ export default class Get extends Command {
 
   async run() {
     const {
-      flags: { driveId, fields, corpora, includeItemsFromAllDrives, supportsAllDrives, orderBy, rawOutput }
+      flags: { driveId, fields, corpora, includeItemsFromAllDrives, supportsAllDrives, orderBy, q, rawOutput }
     } = this.parse(Get);
 
     this.start('List files');
 
     console.log();
 
-    const options: any = { fields, corpora, includeItemsFromAllDrives, supportsAllDrives, orderBy };
+    const options: any = { fields, corpora, includeItemsFromAllDrives, supportsAllDrives, orderBy, q };
 
     const res = await this.gdrive.listFiles(driveId, options);
     this.stop();
