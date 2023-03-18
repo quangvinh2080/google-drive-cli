@@ -36,11 +36,20 @@ USAGE
 ```
 <!-- usagestop -->
 
-If you don't want to input email and private key on every command, export it as environment variables:
+If you don't want to input email and private key on every command, export it as environment variables, you can copy these information in your `service-account.json` that downloaded from google
+
+**Linux**
 
 ```
-export GDRIVE_CLIENT_EMAIL=example@email.com
+export GDRIVE_CLIENT_EMAIL="example@email.com"
 export GDRIVE_PRIVATE_KEY="service account's private key"
+```
+
+**Windows**
+
+```
+$env:GDRIVE_CLIENT_EMAIL="example@email.com"
+$env:GDRIVE_PRIVATE_KEY="service account's private key"
 ```
 
 ## Usage as library
